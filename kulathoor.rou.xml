@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+
+<!-- ================= VEHICLE TYPES ================= -->
+<!-- TWOWHEELER -->
+<vType id="tw_normal" accel="2.8" decel="5.0" sigma="0.5" tau="1.0" minGap="0.6" maxSpeed="16" guiShape="motorcycle"/>
+<vType id="tw_aggressive" accel="3.2" decel="5.5" sigma="0.8" tau="0.8" minGap="0.4" lcAssertive="2" lcSpeedGain="2" maxSpeed="18" guiShape="motorcycle"/>
+<vType id="tw_harsh" accel="4.0" decel="6.0" sigma="1.0" tau="0.8" minGap="0.3" lcAssertive="3" lcPushy="1" lcImpatience="1" lcSpeedGain="3" maxSpeed="20" guiShape="motorcycle"/>
+
+<!-- CAR -->
+<vType id="car_normal" accel="2.2" decel="4.5" sigma="0.4" tau="1.0" minGap="1.2" maxSpeed="18" guiShape="passenger" color="1,1,1,1"/>
+<vType id="car_aggressive" accel="3.0" decel="5.5" sigma="0.8" tau="0.8" minGap="0.8" lcAssertive="2" lcSpeedGain="2" maxSpeed="20" guiShape="passenger" color="1,1,1,1"/>
+<vType id="car_harsh" accel="4.0" decel="6.5" sigma="1.0" tau="0.8" minGap="0.3" lcAssertive="3" lcPushy="1" lcImpatience="1" lcSpeedGain="3" maxSpeed="22" guiShape="passenger" color="1,1,1,1"/>
+
+<!-- AUTO (Includes Autos and Pickup Vans) -->
+<vType id="auto_normal" accel="2.0" decel="4.0" sigma="0.6" tau="1.0" minGap="0.9" maxSpeed="14" guiShape="rickshaw" color="0.8,0.8,0,1"/>
+<vType id="auto_aggressive" accel="2.8" decel="5.0" sigma="0.9" tau="0.8" minGap="0.6" lcAssertive="2" lcSpeedGain="2" maxSpeed="16" guiShape="rickshaw" color="0.8,0.8,0,1"/>
+<vType id="auto_harsh" accel="3.5" decel="6.0" sigma="1.0" tau="0.8" minGap="0.3" lcAssertive="3" lcPushy="1" lcImpatience="1" lcSpeedGain="3" maxSpeed="18" guiShape="rickshaw" color="0.8,0.8,0,1"/>
+
+<!-- TRUCK (Includes Trucks and Mini Trucks) -->
+<vType id="truck_normal" accel="1.0" decel="3.0" sigma="0.3" tau="1.2" minGap="3" maxSpeed="12" guiShape="truck" color="0,0,1,1"/>
+<vType id="truck_aggressive" accel="1.5" decel="4.0" sigma="0.6" tau="0.9" minGap="2.5" lcAssertive="1.5" maxSpeed="14" guiShape="truck" color="0,0,1,1"/>
+<vType id="truck_harsh" accel="2.0" decel="5.0" sigma="0.9" tau="0.9" minGap="2.0" lcAssertive="2" lcPushy="1" lcImpatience="1" maxSpeed="16" guiShape="truck" color="0,0,1,1"/>
+
+<!-- BUS -->
+<vType id="bus_normal" accel="1.2" decel="3.5" sigma="0.3" tau="1.2" minGap="2.5" maxSpeed="14" guiShape="bus"  color="1,0.2,0.2,1"/>
+<vType id="bus_aggressive" accel="1.8" decel="4.5" sigma="0.6" tau="0.9" minGap="2.0" lcAssertive="1.5" maxSpeed="16" guiShape="bus"  color="1,0.2,0.2,1"/>
+<vType id="bus_harsh" accel="2.5" decel="5.5" sigma="0.9" tau="0.9" minGap="1.8" lcAssertive="2" lcPushy="1" lcImpatience="1" maxSpeed="18" guiShape="bus"  color="1,0.2,0.2,1"/>
+
+<!-- ================= FLOW DEFINITIONS ================= -->
+
+<!-- === SOUTH FLOWS (Entry: 98623905#0 -> Exit: -802414361) === -->
+<!-- Two Wheelers -->
+<flow id="s_tw_n" type="tw_normal" begin="0" end="3600" number="2841" from="98623905#0" to="-802414361"/>
+<flow id="s_tw_a" type="tw_aggressive" begin="0" end="3600" number="803" from="98623905#0" to="-802414361"/>
+<flow id="s_tw_h" type="tw_harsh" begin="0" end="3600" number="395" from="98623905#0" to="-802414361"/>
+<flow id="k_tw_n" type="tw_normal" begin="0" end="3600" number="12" from="98623905#0" to="-448629606#0"/>
+<flow id="k_tw_a" type="tw_aggressive" begin="0" end="3600" number="12" from="98623905#0" to="-448629606#0"/>
+<flow id="k_tw_h" type="tw_harsh" begin="0" end="3600" number="12" from="98623905#0" to="-448629606#0"/>
+<!-- Cars -->
+<flow id="s_car_n" type="car_normal" begin="0" end="3600" number="1929" from="98623905#0" to="-802414361"/>
+<flow id="s_car_a" type="car_aggressive" begin="0" end="3600" number="551" from="98623905#0" to="-802414361"/>
+<flow id="s_car_h" type="car_harsh" begin="0" end="3600" number="275" from="98623905#0" to="-802414361"/>
+<!-- Autos -->
+<flow id="s_auto_n" type="auto_normal" begin="0" end="3600" number="560" from="98623905#0" to="-802414361"/>
+<flow id="s_auto_a" type="auto_aggressive" begin="0" end="3600" number="160" from="98623905#0" to="-802414361"/>
+<flow id="s_auto_h" type="auto_harsh" begin="0" end="3600" number="80" from="98623905#0" to="-802414361"/>
+<!-- Trucks/Buses -->
+<flow id="s_truck_n" type="truck_normal" begin="0" end="3600" number="250" from="98623905#0" to="-802414361"/>
+<flow id="s_truck_a" type="truck_aggressive" begin="0" end="3600" number="150" from="98623905#0" to="-802414361"/>
+<flow id="s_bus_n" type="bus_normal" begin="0" end="3600" number="100" from="98623905#0" to="-802414361"/>
+
+<!-- === NORTH FLOWS (Entry: 802414361 -> Exit: -98623905#0) === -->
+<!-- Two Wheelers -->
+<flow id="n_tw_n" type="tw_normal" begin="0" end="3600" number="2853" from="802414361" to="-448629606#0"/>
+<flow id="n_tw_a" type="tw_aggressive" begin="0" end="3600" number="815" from="802414361" to="-448629606#0"/>
+<flow id="n_tw_h" type="tw_harsh" begin="0" end="3600" number="407" from="802414361" to="-98623905#0"/>
+<!-- Cars -->
+<flow id="n_car_n" type="car_normal" begin="0" end="3600" number="1929" from="802414361" to="-448629606#0"/>
+<flow id="n_car_a" type="car_aggressive" begin="0" end="3600" number="551" from="802414361" to="-98623905#0"/>
+<flow id="n_car_h" type="car_harsh" begin="0" end="3600" number="275" from="802414361" to="-448629606#0"/>
+<!-- Autos -->
+<flow id="n_auto_n" type="auto_normal" begin="0" end="3600" number="560" from="802414361" to="-448629606#0"/>
+<flow id="n_auto_a" type="auto_aggressive" begin="0" end="3600" number="160" from="802414361" to="-98623905#0"/>
+<flow id="n_auto_h" type="auto_harsh" begin="0" end="3600" number="80" from="802414361" to="-98623905#0"/>
+<!-- Trucks/Buses -->
+<flow id="n_truck_n" type="truck_normal" begin="0" end="3600" number="250" from="802414361" to="-98623905#0"/>
+<flow id="n_truck_a" type="truck_aggressive" begin="0" end="3600" number="150" from="802414361" to="-448629606#0"/>
+<flow id="n_bus_n" type="bus_normal" begin="0" end="3600" number="100" from="802414361" to="-98623905#0"/>
+
+
+<!-- WEST ENTRY FLOWS (Entry: 448629606#0 -> Exit: -98623905#0) -->
+<!-- CHANGED: Exit is now -98623905#0 (South) instead of -802414361 (North) -->
+<!-- This creates a West-to-South flow, crossing the network logically. -->
+
+<!-- Two Wheelers -->
+<flow id="w_tw_n" type="tw_normal" begin="0" end="3600" number="565" from="448629606#0" to="-98623905#0"/>
+<flow id="v_tw_n" type="tw_normal" begin="0" end="3600" number="5" from="448629606#0" to="-802414361"/>
+<flow id="w_tw_a" type="tw_aggressive" begin="0" end="3600" number="42" from="448629606#0" to="-802414361"/>
+<flow id="v_tw_a" type="tw_aggressive" begin="0" end="3600" number="121" from="448629606#0" to="-98623905#0"/>
+<flow id="w_tw_h" type="tw_harsh" begin="0" end="3600" number="61" from="448629606#0" to="-98623905#0"/>
+<flow id="v_tw_h" type="tw_harsh" begin="0" end="3600" number="21" from="448629606#0" to="-802414361"/>
+
+<!-- Cars -->
+<flow id="w_car_n" type="car_normal" begin="0" end="3600" number="2" from="448629606#0" to="-802414361"/>
+<flow id="w_car_a" type="car_aggressive" begin="0" end="3600" number="105" from="448629606#0" to="-98623905#0"/>
+<flow id="w_car_h" type="car_harsh" begin="0" end="3600" number="54" from="448629606#0" to="-98623905#0"/>
+<flow id="v_car_n" type="car_normal" begin="0" end="3600" number="383" from="448629606#0" to="-98623905#0"/>
+<flow id="v_car_a" type="car_aggressive" begin="0" end="3600" number="5" from="448629606#0" to="-802414361"/>
+<flow id="v_car_h" type="car_harsh" begin="0" end="3600" number="2" from="448629606#0" to="-802414361"/>
+
+
+<!-- Autos -->
+<flow id="w_auto_n" type="auto_normal" begin="0" end="3600" number="106" from="448629606#0" to="-98623905#0"/>
+<flow id="w_auto_a" type="auto_aggressive" begin="0" end="3600" number="6" from="448629606#0" to="-802414361"/>
+<flow id="w_auto_h" type="auto_harsh" begin="0" end="3600" number="8" from="448629606#0" to="-98623905#0"/>
+<flow id="v_auto_n" type="auto_normal" begin="0" end="3600" number="6" from="448629606#0" to="-98623905#0"/>
+<flow id="v_auto_a" type="auto_aggressive" begin="0" end="3600" number="26" from="448629606#0" to="-98623905#0"/>
+<flow id="v_auto_h" type="auto_harsh" begin="0" end="3600" number="8" from="448629606#0" to="-98623905#0"/>
+
+<!-- Trucks/Buses -->
+<flow id="w_truck_n" type="truck_normal" begin="0" end="3600" number="1" from="448629606#0" to="-802414361"/>
+<flow id="v_truck_n" type="truck_normal" begin="0" end="3600" number="49" from="448629606#0" to="-98623905#0"/>
+<flow id="w_truck_a" type="truck_aggressive" begin="0" end="3600" number="14" from="448629606#0" to="-98623905#0"/>
+<flow id="v_truck_a" type="truck_aggressive" begin="0" end="3600" number="1" from="448629606#0" to="-802414361"/>
+<flow id="w_bus_n" type="bus_normal" begin="0" end="3600" number="14" from="448629606#0" to="-98623905#0"/>
+<flow id="v_bus_n" type="bus_normal" begin="0" end="3600" number="7" from="448629606#0" to="-802414361"/>
+</routes>
