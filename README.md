@@ -4,7 +4,7 @@
 
 ---
 
-## 📌 Overview
+##  Overview
 
 Road traffic in Kerala consists of highly heterogeneous traffic involving two-wheelers, cars, autorickshaws, buses, trucks, mini-trucks, and cycles. This heterogeneous environment creates complex interactions between vehicles, particularly during close following, sudden braking, lane changes, junction movements, and conflict situations.
 
@@ -12,9 +12,9 @@ This project develops a **driver behaviour analysis and collision-risk classific
 
 The system processes vehicle trajectory information generated from **SUMO (Simulation of Urban Mobility)**, extracts behavioural and surrogate safety features, generates collision-risk labels using a rule-based risk-scoring framework, introduces calibrated sensor noise to approximate real-world measurement uncertainty, and trains a **Random Forest classifier** to classify traffic situations into:
 
-* 🟢 **Low Risk**
-* 🟡 **Medium Risk**
-* 🔴 **High Risk**
+*  **Low Risk**
+*  **Medium Risk**
+*  **High Risk**
 
 The project is designed around traffic conditions representative of **Kerala**, with the Kulathoor study area used as the traffic context.
 
@@ -22,7 +22,7 @@ The project is designed around traffic conditions representative of **Kerala**, 
 
 ---
 
-# 🎯 Objectives
+#  Objectives
 
 The main objectives of the project are:
 
@@ -37,7 +37,7 @@ The main objectives of the project are:
 
 ---
 
-# 🏗️ System Architecture
+#  System Architecture
 
 ```text
                     KERALA / KULATHOOR TRAFFIC CONTEXT
@@ -604,7 +604,7 @@ The purpose is to introduce uncertainty around borderline cases rather than crea
 
 ---
 
-# ⚠️ Important Label Interpretation
+#  Important Label Interpretation
 
 The generated `collision_risk` value is a **surrogate risk label**, not an independently observed crash label.
 
